@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap');
+
+:root{
+  --soft-blue: hsl(215, 51%, 70%);
+  --cyan: hsl(178, 100%, 50%);
+  --dark-blue-primary: hsl(217, 54%, 11%);
+  --dark-blue-secondary: hsl(216, 50%, 16%);
+  --dark-blue-alt: hsl(215, 32%, 27%);
+  --white: hsl(0, 0%, 100%);
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+img{
+  display: block;
+  max-width: 100%;
+}
+
+body{
+  font-family: 'Outfit', sans-serif;
+  background: var(--dark-blue-primary);
+  color: var(--white);
+  font-size: 18px;
+}
+
+main{
+  max-width: 1440px;
+  margin: 50px auto;
+  padding: 0 20px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card{
+  max-width: 320px;
+  background: var(--dark-blue-secondary);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 20px 25px 15px rgba(0,0,0,0.05), 0px 40px 30px 15px rgba(0,0,0,0.1);
+}
+
+.card-image{
+  position: relative;
+  cursor: pointer;
+}
+
+.card-image::after{
+  content: url('./images/icon-view.svg');
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  width: 100%;
+  background: hsla(178, 100%, 50%, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.card-image:hover::after{
+  opacity: 1;
+}
+
+.card-image img{
+  border-radius: 8px;
+}
+
+.card-content{
+  margin-top: 1.4rem;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.card-content h2{
+  font-size: 20px;
+}
+
+.card-content p{
+  font-size: 15px;
+  line-height: 1.5;
+  font-weight: 300;
+  color: var(--soft-blue);
+}
+
+.price{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price .ethereum-rate, 
+.price .time-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.price .ethereum-rate span{
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--cyan);
+}
+
+.price .time-left span{
+  font-size: 14px;
+  color: var(--soft-blue);
+}
+
+.card-footer{
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--dark-blue-alt);
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.card-footer .image-container{
+  border-radius: 50%;
+  border: 1px solid var(--white);
+}
+
+.card-footer .image-container img{
+  width: 28px;
+  height: 28px;
+}
+
+.card-footer p{
+  font-size: 14px;
+  color: var(--soft-blue);
+}
+
+.card-footer p span{
+  color: var(--white);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
